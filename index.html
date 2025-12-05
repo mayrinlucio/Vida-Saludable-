@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Vida Saludable</title>
+  <style>
+    body{
+      background-color:#FFEFF4;
+      font-family: Arial, Helvetica, sans-serif;
+      margin:0;
+    }
+    header{
+      text-align:center;
+      background:#FFCCE1;
+      padding:25px;
+    }
+    header h1{
+      margin:0;
+      font-size:40px;
+      color:#C20058;
+    }
+    .seccion{
+      max-width:900px;
+      margin:auto;
+      background:#FFF4F8;
+      padding:25px;
+      margin-top:25px;
+      border-radius:12px;
+      box-shadow:0px 0px 10px rgba(0,0,0,0.1);
+    }
+    h2{
+      color:#C20058;
+      border-bottom:2px solid #FFCCE1;
+      padding-bottom:5px;
+      font-size:30px;
+    }
+    h3{
+      color:#C20058;
+      font-size:23px;
+      margin-top:15px;
+    }
+    ul{padding-left:20px;}
+    footer{
+      margin-top:40px;
+      background:#FFCCE1;
+      text-align:center;
+      padding:20px;
+      font-weight:bold;
+      color:#7A0039;
+    }
+    .quiz-question{
+      margin-bottom:15px;
+    }
+    button{
+      padding:10px 20px;
+      border:none;
+      border-radius:8px;
+      background:#FF9DC6;
+      color:#fff;
+      cursor:pointer;
+      font-weight:bold;
+      margin-top:10px;
+      font-size:16px;
+    }
+    button:hover{
+      background:#FF74AF;
+    }
+    #resultado{
+      margin-top:20px;
+      font-size:28px;
+      font-weight:bold;
+      color:#C20058;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Vida Saludable </h1>
+  <p>Cuidar tu cuerpo, tu mente y tus emociones</p>
+</header>
+
+
+<section class="seccion">
+  <h2>¿Qué es la salud?</h2>
+  <p>
+    La salud es un estado integral de bienestar físico, mental y social.
+  </p>
+</section>
+
+<section class="seccion">
+  <h2>Salud Física</h2>
+
+  <ul>
+    <li>Alimentación adecuada</li>
+    <li>Ejercicio regular</li>
+    <li>Dormir bien</li>
+    <li>Sistema inmune sano</li>
+    <li>Higiene personal</li>
+  </ul>
+
+  <h3>Importancia:</h3>
+  <p>Permite que tu cuerpo funcione bien y tengas energía.</p>
+</section>
+
+<section class="seccion">
+  <h2>Salud Mental y Emocional</h2>
+
+  <ul>
+    <li>Manejar emociones</li>
+    <li>Autoestima sana</li>
+    <li>Relaciones sanas</li>
+  </ul>
+
+  <h3>Importancia:</h3>
+  <p>Influye en tu estabilidad emocional, tu paz interna y tu felicidad.</p>
+</section>
+
+
+<section class="seccion">
+  <h2>Salud Social</h2>
+
+  <ul>
+    <li>Relaciones sanas</li>
+    <li>Convivencia positiva</li>
+  </ul>
+
+  <h3>Importancia:</h3>
+  <p>Nos permite sentirnos apoyados y acompañados.</p>
+</section>
+
+
+<!-- NUEVA SECCIÓN QUIZ -->
+<section class="seccion">
+
+  <h2>Mini Quiz </h2>
+
+
+  <div class="quiz-question">
+    <p>1. ¿Cuánta agua debemos tomar al día?</p>
+    <select id="p1">
+      <option value="0"></option>
+      <option value="1">1.5 a 2 litros</option>
+      <option value="0">Solo 1 vaso</option>
+      <option value="0">10 litros</option>
+    </select>
+  </div>
+
+  <div class="quiz-question">
+    <p>2. ¿Qué tipo de salud incluye manejar emociones?</p>
+    <select id="p2">
+      <option value="0"></option>
+      <option value="1">Mental</option>
+      <option value="0">Física</option>
+    </select>
+  </div>
+
+  <div class="quiz-question">
+    <p>3. ¿Qué hábito es sano?</p>
+    <select id="p3">
+      <option value="0"></option>
+      <option value="1">Dormir 8 horas</option>
+      <option value="0">No tomar agua</option>
+    </select>
+  </div>
+
+  <div class="quiz-question">
+    <p>4. ¿Qué parte del cuerpo cuida la actividad física?</p>
+    <select id="p4">
+      <option value="0"></option>
+      <option value="1">El corazón</option>
+      <option value="0">Las orejas</option>
+    </select>
+  </div>
+
+  <div class="quiz-question">
+    <p>5. ¿Cuál ayuda a la salud mental?</p>
+    <select id="p5">
+      <option value="0"></option>
+      <option value="1">Hablar de tus emociones</option>
+      <option value="0">Guardarte todo</option>
+    </select>
+  </div>
+
+  <div class="quiz-question">
+    <p>6. ¿Qué es importante para la salud social?</p>
+    <select id="p6">
+      <option value="0"></option>
+      <option value="1">Tener amigos sanos</option>
+      <option value="0">Pelear con todos</option>
+    </select>
+  </div>
+
+  <button onclick="calcular()">Calificar</button>
+
+  <p id="resultado"></p>
+
+</section>
+
+
+<script>
+
+function calcular(){
+  let total = 0
+
+  total += parseInt(p1.value)
+  total += parseInt(p2.value)
+  total += parseInt(p3.value)
+  total += parseInt(p4.value)
+  total += parseInt(p5.value)
+  total += parseInt(p6.value)
+
+  document.getElementById("resultado").innerHTML =
+  "Tu puntaje es: "+total+"/6 "
+}
+
+</script>
+
+
+<footer>
+  Página creada por: Las chicas super programadoras 
+</footer>
+
+</body>
+</html>
